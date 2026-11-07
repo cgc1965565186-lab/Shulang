@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-and-build:
+    runs-on: xcode-27
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Xcode
+        run: xcodebuild -version
+      - name: License audit
+        run: ./Scripts/audit-licenses.sh
+      - name: Unit tests
+        run: swift test --disable-sandbox -j 1
+      - name: Assemble release build
+        run: ./Scripts/build-app.sh
+      - name: Verify build artifacts
+        run: |
+          plutil -lint build/疏朗.app/Contents/Info.plist
+          codesign --verify --deep --strict build/疏朗.app
+          shasum -a 256 -c build/SHA256SUMS.txt
+      - name: Upload checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: shulang-checksums
+          path: build/SHA256SUMS.txt
+
+  # 签名与公证只在受保护 tag 的受控环境执行，PR 不接触任何签名密钥。

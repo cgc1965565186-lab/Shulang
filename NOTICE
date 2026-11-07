@@ -1,0 +1,9 @@
+疏朗 Shulang
+Copyright 2026 Shulang contributors
+
+本产品采用 Apache License 2.0 发布，详见 LICENSE。
+
+应用图标素材由图像模型生成，经内容感知修复去除生成水印后，
+由 Scripts/make-icon.py 转换为标准 macOS 图标集。
+参考过的开源项目仅用于算法与交互设计参考，未复制或链接其源码，
+详见 docs/OPEN_SOURCE_AUDIT.md。
