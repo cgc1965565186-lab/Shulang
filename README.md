@@ -1,5 +1,9 @@
 # 疏朗 Shulang
 
+简体中文 | [English](README_EN.md)
+
+[![CI](https://github.com/cgc1965565186-lab/Shulang/actions/workflows/ci.yml/badge.svg)](https://github.com/cgc1965565186-lab/Shulang/actions/workflows/ci.yml)
+
 **看清空间，安心释放。** 一款开源、不上架 App Store 的 macOS 原生磁盘清理应用。
 
 疏朗只做两件事：把磁盘空间讲清楚，以及把清理做成可复核、可撤销的事务。它不承诺「提速」，不做内存释放、进程杀除、系统参数修改，也不诱导关闭 SIP 或 Gatekeeper。

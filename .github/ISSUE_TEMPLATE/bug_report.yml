@@ -1,0 +1,29 @@
+name: Bug report / 问题反馈
+description: Report a reproducible problem / 报告可复现的问题
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened? / 发生了什么？
+      description: Describe the actual and expected behavior. / 请描述实际结果和预期结果。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Use generated or non-sensitive files. / 请使用生成的或不含隐私的文件。
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Shulang version, macOS version, and Mac model / 疏朗版本、macOS 版本和机型
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context / 补充信息
+      description: Remove personal paths and data before attaching logs or screenshots. / 上传日志或截图前请移除个人路径和数据。安全漏洞请使用 Security 中的私密报告。
